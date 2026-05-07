@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Study Flashcards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Floating orbs background -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">📚 StudyCards</h1>
+            <p class="subtitle" id="subtitle">Pick a subject to start</p>
+        </header>
+
+        <!-- Subject Selector -->
+        <nav class="subject-nav" id="subjectNav">
+            <button class="subject-btn" data-subject="quant" id="btn-quant">
+                <span class="btn-icon">📊</span>
+                <span class="btn-label">Quantitative Methods</span>
+            </button>
+            <button class="subject-btn" data-subject="enum" id="btn-enum">
+                <span class="btn-icon">☕</span>
+                <span class="btn-label">Enumerations & Nested Classes</span>
+            </button>
+            <button class="subject-btn" data-subject="regex" id="btn-regex">
+                <span class="btn-icon">🔤</span>
+                <span class="btn-label">Regular Expressions</span>
+            </button>
+        </nav>
+
+        <!-- Topic List -->
+        <div class="topic-list" id="topicList"></div>
+
+        <!-- Flashcard Area -->
+        <div class="card-container" id="cardContainer">
+            <div class="card-wrapper" id="cardWrapper">
+                <div class="flashcard" id="flashcard">
+                    <div class="card-inner" id="cardInner">
+                        <div class="card-front">
+                            <span class="card-badge" id="cardBadge">Topic</span>
+                            <h2 class="card-title" id="cardTitle">Question</h2>
+                            <p class="card-hint">Tap to reveal answer</p>
+                        </div>
+                        <div class="card-back">
+                            <span class="card-badge badge-back" id="cardBadgeBack">Answer</span>
+                            <div class="card-answer" id="cardAnswer"></div>
+                            <p class="card-hint">Tap to flip back</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Progress -->
+            <div class="card-progress">
+                <span id="cardCounter">1 / 7</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+            <!-- Navigation -->
+            <div class="card-nav">
+                <button class="nav-btn" id="prevBtn" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button class="nav-btn back-btn" id="backBtn">All Topics</button>
+                <button class="nav-btn" id="nextBtn" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                </button>
+            </div>
+            <!-- Swipe Hint -->
+            <p class="swipe-hint" id="swipeHint">👆 Swipe left or right to navigate</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
